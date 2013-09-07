@@ -43,7 +43,7 @@ sopranoVoice = \relative c'' {
   a8. c16 \grace{bes16[( c]} bes16) a g fis
   a4 g
   g8. bes16 \grace{a16[( bes]} a) g f! e
-    g4 f
+  g4 f
   f8. a16 \grace{g16[( a]} g) f e d
   d4 c
   des8. aes'16 \grace{g16[( aes]} g) f es des
@@ -143,23 +143,23 @@ right = \relative c'' {
   <b, f' a>4~ <b f'  g>
   <bes f' g>8. bes'16 \grace{a16[( bes]} <c, e a>) g' <bes, d f!> e
   <a, d g>4~ <a d f>
-   f'8. a16 \grace{g16[( a]} g) f e d
+  f'8. a16 \grace{g16[( a]} g) f e d
   d4 c
   des8. aes'16 \grace{g16[( aes]} g) f es des
   
   <f, ces' des>4 <e bes' c>
   <<
     {
-  a'8. c16 \grace{bes16[_( c]} bes16) a g fis
-  <f a>4 <f g>
-  g8. bes16 \grace{a16[( bes]} a) g f! e
-  g4 g}
+      a'8. c16 \grace{bes16[_( c]} bes16) a g fis
+      <f a>4 <f g>
+      g8. bes16 \grace{a16[( bes]} a) g f! e
+      g4 g}
     \\
     {
-        <c, f>4 <d fis>8 c
-    b2
-    <bes f'>4 <c e>8 <bes d>
-    <a d>4 <a c>
+      <c, f>4 <d fis>8 c
+      b2
+      <bes f'>4 <c e>8 <bes d>
+      <a d>4 <a c>
     }
   >>
   f'8. aes16 \grace{g16[( aes]} g) f es des
@@ -169,22 +169,22 @@ right = \relative c'' {
   \key f \minor
   <<
     {
-  c'8 aes16 bes c c bes aes
-  des4 c
-  c8 a16 bes c c bes a
-  c4 bes
-  bes8 bes16 bes c bes aes g
-  bes4 aes8. aes16
-  g8. aes16 g8. aes16
-  <bes, e g>4 <e g bes c>
-  c'8 aes16 bes c c bes aes
-  des4 c
-  c8 a16 bes c c bes a
-  c4 bes
-  bes8 bes16 bes c bes aes g
-  aes8. c16 \grace{bes16[( c]} bes) aes g f
-  aes8. c16 \grace{g16[( aes]} g) f e g 
-  <aes, c f>8 <c e g c> <f aes c f> \oneVoice r
+      c'8 aes16 bes c c bes aes
+      des4 c
+      c8 a16 bes c c bes a
+      c4 bes
+      bes8 bes16 bes c bes aes g
+      bes4 aes8. aes16
+      g8. aes16 g8. aes16
+      <bes, e g>4 <e g bes c>
+      c'8 aes16 bes c c bes aes
+      des4 c
+      c8 a16 bes c c bes a
+      c4 bes
+      bes8 bes16 bes c bes aes g
+      aes8. c16 \grace{bes16[( c]} bes) aes g f
+      aes8. c16 \grace{g16[( aes]} g) f e g 
+      <aes, c f>8 <c e g c> <f aes c f> \oneVoice r
     }
     \\
     {
@@ -212,8 +212,8 @@ left = \relative c' {
   % En avant la musique !
   <<
     {f,,8 <aes' c f> <c f aes> f,,
-  es8 <g' bes es> <bes es g> es,,
-  des8 <f' aes des> <aes des f> des,,}
+     es8 <g' bes es> <bes es g> es,,
+     des8 <f' aes des> <aes des f> des,,}
     \\
     {
       f4. f8
@@ -269,7 +269,7 @@ sopranoVoicePart = \new Staff \with {
   % instrumentName = "Soprano"
   midiInstrument = "choir aahs"
   \consists "Ambitus_engraver"
-} { \sopranoVoice }
+} {   \sopranoVoice }
 \addlyrics { \verseOne }
 \addlyrics { \verseTwo }
 
@@ -278,22 +278,59 @@ pianoPart = \new PianoStaff \with {
 } <<
   \new Staff = "right" \with {
     midiInstrument = "acoustic grand"
-  } \right
+  }   \right
   \new Staff = "left" \with {
     midiInstrument = "acoustic grand"
-  } { \clef bass \left }
+  } { \clef bass \left 
+  }
 >>
 
-\score {
-  <<
-    \sopranoVoicePart
-    \pianoPart
-  >>
-  \layout { }
-  \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 60 4)
-    }
+\book {
+  \score {
+    <<
+      \sopranoVoicePart
+      \pianoPart
+    >>
+    \layout { }
+    %   \midi {
+    %     \context {
+    %       \Score
+    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
+    %     }
+    %   }
+  }
+}
+
+\book {
+  \bookOutputSuffix "re"
+  \score {
+    <<
+      \transpose f d \sopranoVoicePart
+      \transpose f d \pianoPart
+    >>
+    \layout { }
+    %   \midi {
+    %     \context {
+    %       \Score
+    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
+    %     }
+    %   }
+  }
+}
+
+\book {
+  \bookOutputSuffix "do"
+  \score {
+    <<
+      \transpose f c \sopranoVoicePart
+      \transpose f c \pianoPart
+    >>
+    \layout { }
+    %   \midi {
+    %     \context {
+    %       \Score
+    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
+    %     }
+    %   }
   }
 }
