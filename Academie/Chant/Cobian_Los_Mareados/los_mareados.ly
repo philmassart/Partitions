@@ -86,10 +86,10 @@ verseOne = \lyricmode {
   Lin -- da~y fa -- tal.
   
   Be -- bí -- as
-  Y~-.en el fra -- gor del cham -- pán
+  Y~en el fra -- gor del cham -- pán
   Lo -- ca re -- í -- as
   Por no llo -- rar.
-  o --  jos que tan -- to~a -- do -- ra.
+  o --  jos que tan -- to~a -- do -- ré.
   
   Es -- ta no -- che~a -- mi -- ga mí -- a
   El al -- cohol nos ha~em -- bria -- ga -- do
@@ -285,6 +285,10 @@ pianoPart = \new PianoStaff \with {
   }
 >>
 
+\paper {
+  ragged-last-bottom =##f
+}
+
 \book {
   \score {
     <<
@@ -295,42 +299,42 @@ pianoPart = \new PianoStaff \with {
     %   \midi {
     %     \context {
     %       \Score
-    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
+    %       tempoWholesPerMinute = #(ly:make-moment 50 4)
     %     }
     %   }
   }
 }
 
 \book {
-  \bookOutputSuffix "re"
+  \bookOutputSuffix "mi"
   \score {
     <<
-      \transpose f d \sopranoVoicePart
-      \transpose f d \pianoPart
+      \transpose f e \sopranoVoicePart
+      \transpose f e \pianoPart
     >>
     \layout { }
-    %   \midi {
-    %     \context {
-    %       \Score
-    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
-    %     }
-    %   }
+      \midi {
+        \context {
+          \Score
+          tempoWholesPerMinute = #(ly:make-moment 50 4)
+        }
+      }
   }
 }
 
 \book {
-  \bookOutputSuffix "do"
+  \bookOutputSuffix "mi_bemol"
   \score {
     <<
-      \transpose f c \sopranoVoicePart
-      \transpose f c \pianoPart
+      \transpose f es \sopranoVoicePart
+      \transpose f es \pianoPart
     >>
     \layout { }
-    %   \midi {
-    %     \context {
-    %       \Score
-    %       tempoWholesPerMinute = #(ly:make-moment 60 4)
-    %     }
-    %   }
+      \midi {
+        \context {
+          \Score
+          tempoWholesPerMinute = #(ly:make-moment 50 4)
+        }
+      }
   }
 }
