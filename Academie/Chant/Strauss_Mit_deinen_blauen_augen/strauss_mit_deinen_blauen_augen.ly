@@ -175,7 +175,7 @@ left = \relative c, {
   <a, a'>8 a'' <c,, c'> s8
   <f f'>8 s4.
   <d d'>8 s <g, g'> s
-  <c, c'>8 s s <c'' c'>(
+  <c c'>8 s s <c' c'>(
   <bes' e g>16 c <bes e g> c <bes e g> c \times 2/3 { <bes e g>[ <d bes'> <c a'>] }
   <bes e g>16 c) c,8( \clef treble <d' bes'>16 c \times 2/3 { <d bes'>[ <f d'> <e c'>] }
   <d bes'>16 c \times 2/3 { <d bes'>[ <c a'> <a f'>] } <bes e g>) c \clef bass c,8

@@ -193,9 +193,9 @@ right = \relative c' {
    <bes des es>1
    <bes f' bes>
    <bes des f>
-   << <g b cis>1 \\
+   << <ases ces des>1 \\
       {
-        r4\< <b d>-> <cis e>-> <g' b>\!->
+        r4\< <ces eses>-> <des fes>-> <ases' ces>\!->
       }
    >>
 }
@@ -404,7 +404,7 @@ left = \relative c {
 <ges des'>1
 <g des'>
 <aes f'>
-<a e'>
+<beses fes'>
 }
 
 leftsuite = \relative c {
