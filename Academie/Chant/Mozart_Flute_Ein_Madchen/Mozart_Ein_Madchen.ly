@@ -138,7 +138,7 @@ left = \relative c' {
 }
 
 bassVoicePart = \new Staff \with {
-  instrumentName = "Basse"
+  instrumentName = "Papageno"
   midiInstrument = "choir aahs"
 } { \clef bass \bassVoice }
 %\addlyrics { \verseOne }
