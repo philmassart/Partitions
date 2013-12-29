@@ -18,6 +18,8 @@ global = {
   \numericTimeSignature
   \time 3/4
   \tempo "Lent"
+    \override Slur.height-limit=4
+
 }
 
 tenorVoice = \relative c' {
