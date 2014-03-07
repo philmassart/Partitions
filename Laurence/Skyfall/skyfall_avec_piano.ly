@@ -12,7 +12,7 @@
 %     \remove "Bar_number_engraver"
 %   }
 % }
-#(set-global-staff-size 18)
+#(set-global-staff-size 17)
 global = {
   \key c \minor
   \time 4/4
@@ -24,9 +24,9 @@ global = {
   \global
   % En avant la musique !
   \repeat tremolo 16 {d32\sfz\> <bes g>\p\<}
-  <es g d'>1\mf \bar "|:"
+  <es g d'>1\mf \bar ".|:"
   \grace {d'16[( c g]} <es  c'>4\p) q q q 
-  q q q q \bar ":|"
+  q q q q \bar ":|."
   <es g c> q q q
   <d g c> q <d g b> q \bar "||"
   
@@ -221,8 +221,10 @@ global = {
   \global
   \dynamicUp
   % En avant la musique !
-  R1*2
-  \tempo "Play section 3x" R1*40
+  R1
+  R1
+  \tempo "Play section 3x" 
+  R1*40
   r4 r8 d16 c c8 es4.
   r4 r8 d16 c c8 es4.
   r4 r8 d16 c d8 c4.
@@ -233,7 +235,7 @@ global = {
   R1
   r4 r8 c16 c d8 es4. 
   r4 r8 c16 c d8 es4.
-  r4 r8 c16 c d8 c4.
+  r4 r8 d16 c d8 c4.
   R1
   
   r4 r8 d16 c c8 es4. 
@@ -381,7 +383,7 @@ global = {
   This is the end __
   Hold your breath and count  __ to ten
 Feel  the earth move and then 
-Hear  my heart burst  __ a -- gain 
+Hear  my heart burst  __ a -- gain __
 
 For this is the end __
 I've drowned and dreamt this mo -- ment __
@@ -402,7 +404,7 @@ At sky -- fall
 
 Sky -- fall is where we start
 A thou -- sand miles and poles a -- part
-Where worlds col -- lide and days are dark
+Where worlds col -- lide and days are dark __
 You may have my num -- ber, you can take my name
 But you'll ne -- ver have my heart __
 
@@ -447,15 +449,15 @@ Oh __
   
   
   
-  % sopranoVoicePart = \new Staff \with {
-  %   instrumentName = "Soprano"
-  %   midiInstrument = "choir aahs"
-  % } { \sopranoVoice }
-  % \addlyrics { \verseSopranoVoice }
+%   sopranoVoicePart = \new Staff \with {
+%     instrumentName = "Soprano"
+%     midiInstrument = "choir aahs"
+%   } { \sopranoVoice }
+%   \addlyrics { \verseSopranoVoice }
   
   altoVoicePart = \new Staff \with {
-  instrumentName = "I"
-  shortInstrumentName  = "I"
+  instrumentName = "Choeur"
+  shortInstrumentName  = "ch."
   midiInstrument = "choir aahs"
 } { \altoVoice } \addlyrics { \verseAltoVoice}
 
@@ -477,8 +479,8 @@ pianoPart = \new PianoStaff <<
 \score {
   <<
     %\sopranoVoicePart
-    %\altoVoicePart
     \tenorVoicePart
+    \altoVoicePart
     \pianoPart
   >>
   \layout {  
@@ -493,4 +495,8 @@ pianoPart = \new PianoStaff <<
       tempoWholesPerMinute = #(ly:make-moment 100 4)}
     
   }
+}
+\paper {
+  ragged-last-bottom = ##f
+  page-count = 5
 }
