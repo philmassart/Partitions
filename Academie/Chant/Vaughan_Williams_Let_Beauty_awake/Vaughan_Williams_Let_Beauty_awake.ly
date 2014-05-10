@@ -89,9 +89,9 @@ rightOne = \relative c'' {
   <e cis'>4. ~q4 <e gis>8 <e cis'> <dis b'> <b gis'>
   <dis b'>4. ~q4) 
   \shape #'(
-            ((0.0 . 0.0) (0.0 . 0.0) (0.0 . 0.0) (0.0 . 0.0)) 
+             ((0.0 . 0.0) (0.0 . 0.0) (0.0 . 0.0) (0.0 . 0.0)) 
              ((0.0 . 0.0) (0.0 . 0.0) (0.0 . 0.0) (-1.0 . 0.0)) 
-  )Slur <b gis'>8( <e gis> <gis e'> <fis dis'>
+             )Slur <b gis'>8( <e gis> <gis e'> <fis dis'>
   <e cis'>4 <b gis'>8 <e cis'> <dis b'> <b gis'>
   \voiceOne e2.) \oneVoice <a, e' fis>4.
   \tuplet 2/3 {<b e gis>8( <e gis b>} <e gis cis>4. ~q8 <e gis b>8 <b e gis>
@@ -110,7 +110,7 @@ rightTwo = \relative c'' {
   % En avant la musique !
   s4.*3*7
   s2.
-   \shape #'((0.0 . -1.0) (0.0 . 0.0) (0.0 . 0.0) (0 . 0.0)) Slur 
+  \shape #'((0.0 . -1.0) (0.0 . 0.0) (0.0 . 0.0) (0 . 0.0)) Slur 
   b4.( a) s
   s4.*3*11
   s2.
@@ -158,7 +158,7 @@ leftOne = \relative c {
   \change Staff = "left" \stemUp \tuplet 2/3 {dis,,,32( gis bis dis \change Staff = "right" \stemDown fis bis dis gis)}
   \change Staff = "left" \stemUp \tuplet 2/3 {cis,,,32( gis' cis e \change Staff = "right" \stemDown gis cis e gis)}
   \change Staff = "left" \stemUp a,,32([ cis e gis \change Staff = "right" \stemDown a cis e gis] <a, dis fis>8)
-   \shape #'((0.0 . 0.0) (-0.5 . 2.0) (0.5 . 1.5) (0 . 0.0)) Slur
+  \shape #'((0.0 . 0.0) (-0.5 . 2.0) (0.5 . 1.5) (0 . 0.0)) Slur
   \change Staff = "left" \stemUp \tuplet 2/3 {e,32( b' e \change Staff = "right" \stemDown gis  b e fis gis)}
   \shape #'((0.0 . 0.0) (-0.5 . 2.0) (0.5 . 1.5) (0 . 0.0)) Slur
   \change Staff = "left" \stemUp \tuplet 2/3 {dis,,32( b' e \change Staff = "right" \stemDown gis  b e fis gis)}
@@ -228,6 +228,8 @@ dynamics = {
 
 sopranoVoicePart = \new Staff \with {
   midiInstrument = "choir aahs"
+  \consists "Ambitus_engraver"
+
 } { \sopranoVoice }
 \addlyrics { \verse }
 
@@ -246,9 +248,9 @@ pianoPart = \new PianoStaff \with{
 
 \score {
   <<
-    \transpose fis e
+    \transpose fis es
     \sopranoVoicePart
-    \transpose fis e
+    \transpose fis es
     \pianoPart
   >>
   \layout {
@@ -266,6 +268,35 @@ pianoPart = \new PianoStaff \with{
     }
   }
   \midi { }
+}
+
+\markup { 
+  %  \fill-line {
+  \hspace #1
+  \column {
+    \line{\bold{Traduction}}
+    \line{ Laissez la Beauté s'éveiller dans le matin après de beaux rêves, }
+    \line{ La beauté s'éveille du repos! }
+    \line{ Laissez s'éveiller la Beauté }
+    \line{ Pour l'amour de la Beauté elle-même }
+    \line{ À l'heure où les oiseaux se s’éveillent dans les bosquets }
+    \line{ Et les étoiles brillent au couchant! }
+  }
+  % }
+  % \fill-line {
+  \hspace #2
+  \column {
+    \line{" "}
+    \line{ Laissez la Beauté s'éveiller à l’approche du soir, }
+    \line{ S’éveiller dans le rouge du couchant! }
+    \line{ Au crépuscule }
+    \line{ Lorsque les ombres s’allongent, }
+    \line{ Laisse-la s’éveiller au baiser d’un tendre ami, }
+    \line{ Pour rendre à nouveau, et recevoir!
+ }
+  }
+  \hspace #1
+  % }
 }
 \paper {
   obsolete-after-title-space = 25 \mm  markup-system-spacing

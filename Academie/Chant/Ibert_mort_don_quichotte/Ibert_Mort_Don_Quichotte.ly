@@ -268,18 +268,18 @@ left = \relative c, {
 bassVoicePart = \new Staff \with {
   midiInstrument = "choir aahs"
   \consists "Ambitus_engraver"
-} \transpose a g 
+} \transpose a gis %g 
 { \clef treble \bassVoice }
 \addlyrics { \verse }
 
 pianoPart = \new PianoStaff <<
   \new Staff = "right" \with {
     midiInstrument = "acoustic grand"
-  } \transpose a g   
+  } \transpose a gis % g   
   \right
   \new Staff = "left" \with {
     midiInstrument = "acoustic grand"
-  }\transpose a g  
+  }\transpose a gis %g  
   { \clef bass \left }
 >>
 

@@ -232,8 +232,8 @@ left = \relative c {
 
 bassVoicePart = \new Staff \with {
   midiInstrument = "choir aahs"
-  %  \consists "Ambitus_engraver"
-} { \transpose e c 
+    \consists "Ambitus_engraver"
+} { \transpose e d %c 
     {\clef treble \bassVoice} } 
 \addlyrics { \verse }
 \addlyrics { \versetr }
@@ -241,11 +241,11 @@ bassVoicePart = \new Staff \with {
 pianoPart = \new PianoStaff <<
   \new Staff = "right" \with {
     midiInstrument = "acoustic grand"
-  }   { \transpose e c 
+  }   { \transpose e d %c 
         {\clef treble \right} } 
   \new Staff = "left" \with {
     midiInstrument = "acoustic grand"
-  }  {\transpose e c
+  }  {\transpose e d %c
        {\clef bass \left}}
 >>
 
