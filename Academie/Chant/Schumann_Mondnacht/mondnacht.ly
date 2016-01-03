@@ -1,4 +1,4 @@
-\version "2.15.39"
+\version "2.19.11"
 
 \header {
   title = "Liederkreis"
@@ -143,7 +143,7 @@ rightOne = \relative c'' {
   r16 cis'( a fis cis dis
   <<{cis fis8 e e16} \\
   { cis16 c b8 ais}>>
-  \stemUp <b dis>16) \stemNeutral cis[ a fis] r8
+  \stemUp <b dis>16) \stemNeutral cis![ a fis!] r8
   R4.
   r16 b b b b b
   b <b cis> q q q q
@@ -230,6 +230,7 @@ leftOne = \relative c' {
 
 
 sopranoVoicePart = \new Staff \with {
+  \consists Ambitus_engraver
   instrumentName = ""
   midiInstrument = "choir aahs"
 } { \sopranoVoice }
@@ -249,14 +250,25 @@ pianoPart = \new PianoStaff \with {
 
 \score {
   <<
-    \sopranoVoicePart
-    \pianoPart
+   \transpose e c 
+   \sopranoVoicePart
+  %\transpose e c   
+  \pianoPart
   >>
   \layout { }
   \midi {
     \context {
       \Score
-      tempoWholesPerMinute = #(ly:make-moment 100 4)
+      tempoWholesPerMinute = #(ly:make-moment 100/4)
     }
   }
 }
+
+
+%{
+convert-ly (GNU LilyPond) 2.19.15  convert-ly: Processing `'...
+Applying conversion: 2.15.40, 2.15.42, 2.15.43, 2.16.0, 2.17.0,
+2.17.4, 2.17.5, 2.17.6, 2.17.11, 2.17.14, 2.17.15, 2.17.18, 2.17.19,
+2.17.20, 2.17.25, 2.17.27, 2.17.29, 2.17.97, 2.18.0, 2.19.2, 2.19.7,
+2.19.11
+%}

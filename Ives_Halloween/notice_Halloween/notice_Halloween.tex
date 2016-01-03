@@ -1,0 +1,260 @@
+%\begin{flushleft}
+\documentclass[11pt,a4paper,bibliography=totoc,numbers=noenddot,twoside]{scrreprt}%{scrbook} {scrreprt}
+%\usepackage[top=2.5 cm, bottom=3 cm, inner=2.5 cm, outer=2 cm]{geometry}
+
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Un%icode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = XeLaTeX
+%!TEX encoding = UTF-8 Unicode
+
+\usepackage{flupstyleutfbookxelatex}
+
+
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+\usepackage[frenchb]{babel}
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+
+\usepackage{fontspec,xltxtra,xunicode}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont[Mapping=tex-text]{Garaline Regular}
+%\setromanfont{Linux Libertine O}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+%\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+%\defaultfontfeatures{Mapping=tex-text, Fractions=On} 
+\defaultfontfeatures{Mapping=tex-text} 
+\defaultfontfeatures{Ligatures=TeX}
+\setromanfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+%\setromanfont [Ligatures={TeX}, Numbers={OldStyle}, Variant=02]{Linux Libertine O} 
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setromanfont{Adobe Garamond Pro}
+%\setsansfont{Linux Biolinum O}
+
+%\usepackage[charter]{mathdesign}
+
+
+
+
+\usepackage{tikz}
+%\usepackage{fetatolatex}
+\usepackage{lilyglyphs}
+\usepackage{musicexamples}
+\usepackage{xmpFancyref}
+\setXmpListName{Table des exemples musicaux}
+\setXmpCaptionLabel{Ex. mus.}
+
+
+
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage[babel,french=guillemets*]{csquotes}
+\MakeOuterQuote{"}
+\frenchspacing
+\usepackage[hypertexnames=false]{hyperref}
+%\newcommand{\ieme}{\textsuperscript{ieme}}
+%\newcommand{\iere}{\textsuperscript{iere}}
+\setlength{\parindent}{0pt} %Supprime l'indentation en début de paragraphe
+\usepackage{makeidx}
+\FrenchFootnotes
+%\usepackage{libertineotf}
+
+% taking care of orphans/widows 
+\widowpenalty=10000 
+\clubpenalty=10000 
+\raggedbottom
+\sloppy
+
+%
+%
+%\usepackage{flupstyleutfxelatex}
+%
+%\usepackage[frenchb]{babel}
+%
+%\usepackage{xunicode,fontspec,xltxtra}
+%
+%
+%
+%\usepackage{polyglossia}                                
+%\setdefaultlanguage{french}          
+%
+%
+\usepackage[parfill]{parskip}
+%
+%\setmainfont{Linux Libertine O}
+%\setromanfont{Linux Libertine O}
+%\setsansfont{Linux Biolinum O}
+%
+%\usepackage{url}
+%\usepackage{ae}
+%%\usepackage{microtype}
+%
+%%\usepackage{textcomp}
+%%\usepackage{pxfonts}
+%%\makeatletter
+%
+%\usepackage{fetatolatex}
+%\usepackage{xkeyval}
+
+%\usepackage{scrpage2}
+%\pagestyle{scrheadings}
+
+\usepackage[multiple]{footmisc}
+
+%\usepackage[charter]{mathdesign}
+%\usepackage{libertine}
+%\renewcommand{\bfseries}{\textsb}
+
+%\usepackage[colorlinks=false]{hyperref}
+%\hypersetup{ pdfinfo={
+%Title={Concerti grossi},
+%Subject={Édition critique - Laure Bellessa}, 
+%Author={Corelli - Geminiani}, % ...
+%}
+%}
+\usepackage{makeidx}
+\makeindex
+\KOMAoptions {listof=totoc}
+\KOMAoptions  {index=totoc}
+\renewcommand*{\partpagestyle}{empty}
+
+
+%%%%%SETTINGS BIBLATEX%%%%%
+
+\defbibheading{partitions}{\section*{Partitions}}
+\defbibheading{theorie}{\section*{Ouvrages musicaux}}
+\defbibheading{divers}{\section*{Ouvrages divers}}
+\DeclareFieldFormat[thesis]{citetitle}{\mkbibemph{#1}} % ANCIENNEMENT QUOTE
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}} %ANCIENNEMENT: QUOTE
+%\renewcommand{\bibnamedash}{------,{ }}
+\renewcommand{\bibhang}{0.5cm}
+
+\usepackage{caption}
+\addto\captionsfrench{\def\figurename{{\bfseries Fig.}}} % Pour que les titres ne soient plus en smallcaps, soient en gras et soient Fig. au lieu de Figure.
+\captionsetup{margin=10pt,font=small,labelfont=bf}
+
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif, .gif}
+\AddThinSpaceBeforeFootnotes
+
+\title{TRAVAIL DE RECHERCHE\\ CAPE Lecture à vue-Transposition}
+\author{Philippe Massart}
+
+%\pagenumbering{gobble} % supprimer les n°s de pages
+
+%\pagestyle{fancy}
+%\fancyhead[LE,RO]{ }
+%\fancyhead[CE]{ }
+%\fancyhead[CO]{ }
+%\fancyfoot[CO]{}
+%\pagestyle{headings}
+%\pagestyle{plain}
+% En-tete
+%\lhead{}        \chead{Lecture à vue et langages contemporains}        \rhead{}
+
+
+%%%%%%Aligner les footnotes sur le début du texte et non de la marge%%%%%
+\makeatletter
+\long\def\@makefntextFB#1{%
+	\ifx\thefootnote\ftnISsymbol
+		\@makefntextORI{#1}%
+	\else
+		\rule\z@\footnotesep
+		\setbox\@tempboxa\hbox{\@thefnmark}%
+			\ifdim\wd\@tempboxa>\z@
+				\kern2em\llap{\@thefnmark.\kern0.5em}%
+			\fi
+		\hangindent2em\hangafter\@ne#1
+	\fi}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagestyle{empty}
+
+%%\titlepage
+%\date {26 avril 2008}
+%%\maketitle
+%\begin{center}
+%\begin{LARGE} \textbf{CONCERTI GROSSI\\ \vspace{1cm}
+%%TITRE (suite)
+%} 
+%\end{LARGE}  \vspace{1cm}
+% \textit{con due violini, viola e violoncello di concertino obligati}
+% \\ \textit{e due altri violini e basso di concerto grosso} 
+%  \vspace{1cm}
+%\\ \textbf{da}
+%\vspace{1cm}
+%\\ \begin{large} \textbf {Francesco Geminiani} \end{large}
+%\vspace{1.5cm}
+%\\ Édition critique d'après la copie de la Bibliothèque musicale François Lang de Royaumont \vspace{9cm}
+%\\ Laure \textsc{Bellessa}\vspace{1cm}
+%\\ Master universitaire Musique : Recherche et Pratiques d’Ensemble
+%%\\Master machin (suite)
+%\end{center}
+%
+%\clearpage
+%
+%\onehalfspacing
+%\tableofcontents
+%\setcounter{secnumdepth}{-1}
+%\thispagestyle{empty}
+
+\newpage
+
+It was intended that this piece be played several times, and differently each time, returning from the mark D.C. and playing the Coda; as is customary, the last time; but each time all strings play the measures before the bar B.C.
+
+\begin{center}
+\textbf{If played four time}
+\end{center}
+
+\textbf{First time} Allegretto and \lilyDynamics{pp}. Second violin and cello only, until two measures before D.C. which all strings play each time. No piano.
+
+\textbf{Seconde time} Allegro moderato --- \lilyDynamics{mp}. First violin and viola only, until two measures before D.C. No piano.
+
+\textbf{Third time} Allegro molto --- strings \lilyDynamics {f} but piano {p}. All strings and piano, which plays only outer notes of each chord, that is, the upper and lower notes only, in each hand.
+
+\textbf{Fourth time} Presto (or as fast as possible without disabling any player or instrument) --- double \lilyDynamics{ff}. All play all notes and Coda.
+
+
+
+\begin{center}
+\textbf{If played three time}
+\end{center}
+
+\textbf{First time} Allegretto --- \lilyDynamics{pp}. Second violin and cello, until two measures before D.C. which all play. No piano.
+
+\textbf{Seconde time} Allegro --- \lilyDynamics{mf}. All strings, piano may play; if so --- \lilyDynamics{pp}. Only upper and lower notes in each hand; or piano may not play at all this time.
+
+\textbf{Third time} Presto --- \lilyDynamics{ff}. All play all notes and Coda.
+
+In any case, the playing gets faster and louder each time, keeping up with the bonfire.
+
+It has been observed by friends that three times around is quite enough while others stood for four --- but as this piece was written for a Haloowe'en party and not for a nice concert, the decision must be made by the players, regardless of the feelings of the audience.
+
+\textbf{P.S.} A bass drum or drum during the last time may play the total rests in measures 3, 4, 5 and 8, and from there on may add his own part --- impromptu, or otherwise.
+
+\flushright{\textbf{\textsc{Charles Edward Ives}}}
+%\includepdf[pages=78-80, addtotoc={78, subsection, 2, 1\ier{} mouvement,}]{../lilypond/score.pdf}%%% CONCERTO 5
+
+\includepdf[pages=1-4]{../Ives_Halloween.pdf}
+
+\includepdf{../Ives_Halloween_violinI.pdf}
+\includepdf{../Ives_Halloween_violinII.pdf}
+\includepdf{../Ives_Halloween_viola.pdf}
+\includepdf{../Ives_Halloween_cello.pdf}
+
+\end{document}

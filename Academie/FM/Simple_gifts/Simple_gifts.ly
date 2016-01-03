@@ -31,7 +31,7 @@ sopranoVoice = \relative c' {
   >>
   \oneVoice c,,16^\markup{\italic{legato, simply}} c
   \repeat volta 2 {
-    f8_\markup{\dynamic mp \italic{(2nd time)} \dynamic f} f16 g a f a bes
+    f8_\markup{\dynamic mp \italic{(2nd times)} \dynamic f} f16 g a f a bes
     c8 c16 bes a8  g16 f
     g8 g  g f
     g16 a g e c8  c8
@@ -77,7 +77,7 @@ verse = \lyricmode {
     \new Staff \with {
       % instrumentName = "Soprano"
       midiInstrument = "choir aahs"
-    } { \transpose c a \sopranoVoice }
+    } { \transpose c es \sopranoVoice }
     \addlyrics { \verse }
   >>
   \layout { }

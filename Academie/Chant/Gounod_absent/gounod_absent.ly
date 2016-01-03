@@ -223,16 +223,16 @@ q2 ~q4 r
 bassVoicePart = \new Staff \with {
   midiInstrument = "choir aahs"
     \consists "Ambitus_engraver"
-} \transpose es c  { \clef treble \bassVoice }
+} \transpose f c  { \clef treble \bassVoice }
 \addlyrics { \verse }
 
 pianoPart = \new PianoStaff <<
   \new Staff = "right" \with {
     midiInstrument = "acoustic grand"
-  } \transpose es c \right
+  } \transpose f c \right
   \new Staff = "left" \with {
     midiInstrument = "acoustic grand"
-  } \transpose es c { \clef bass \left }
+  } \transpose f c { \clef bass \left }
 >>
 
 \score {
